@@ -22,7 +22,7 @@ Get-InstalledModule [[-Name] <String[]>] [-MinimumVersion <String>] [-RequiredVe
 ```
 
 ## DESCRIPTION
-The **Get-InstalledModule** cmdlet gets Windows PowerShell modules that are installed on a computer.
+The **Get-InstalledModule** cmdlet gets PowerShell modules that are installed on a computer.
 
 ## EXAMPLES
 

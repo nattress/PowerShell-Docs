@@ -104,7 +104,7 @@ Specifies a file that this cmdlet saves the object to Wildcard characters are pe
 ```yaml
 Type: String
 Parameter Sets: File
-Aliases:
+Aliases: Path
 
 Required: True
 Position: 0

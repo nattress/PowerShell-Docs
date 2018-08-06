@@ -11,7 +11,8 @@ title: Get-ChildItem
 
 # Get-ChildItem
 
-## SYNOPSIS
+## Synopsis
+
 Gets the items and child items in one or more specified locations.
 
 ## SYNTAX
@@ -42,6 +43,7 @@ A location can be a file system location, such as a directory, or a location exp
 ## EXAMPLES
 
 ### Example 1: Get child items in the current directory
+
 ```powershell
 Get-ChildItem
 ```
@@ -54,6 +56,7 @@ The default display lists the mode (attributes), last write time, file size (len
 The valid values for mode are `d` (directory), `a` (archive), `r` (read-only), `h` (hidden), and `s` (system).
 
 ### Example 2: Get all files with the specified file extension in the current directory and subdirectories
+
 ```powershell
 Get-ChildItem -Path *.txt -Recurse -Force
 ```
@@ -67,6 +70,7 @@ Use the `-Include` parameter to specify the .txt file type.
 For example, `Get-ChildItem -Path .\* -Include *.txt -Recurse`
 
 ### Example 3: Get all child items using an inclusion and exclusion
+
 ```powershell
 Get-ChildItem -Path C:\Windows\Logs\* -Include *.txt -Exclude A*
 ```
@@ -76,6 +80,7 @@ It uses the wildcard character (`*`) to indicate the contents of the Logs subdir
 Because the command does not include the `-Recurse` parameter, `Get-ChildItem` does not include the content of directory automatically; you need to specify it.
 
 ### Example 4: Get all registry keys in a specific key
+
 ```powershell
 Get-ChildItem -Path HKLM:\Software
 ```
@@ -83,6 +88,7 @@ Get-ChildItem -Path HKLM:\Software
 This command gets all of the registry keys in the HKEY_LOCAL_MACHINE\SOFTWARE key in the registry of the local computer.
 
 ### Example 5: Get the name of items in the current directory
+
 ```powershell
 Get-ChildItem -Name
 ```
@@ -90,6 +96,7 @@ Get-ChildItem -Name
 This command gets only the names of items in the current directory.
 
 ### Example 6: Get all certificates in a certification drive that have code-signing authority
+
 ```powershell
 Import-Module Microsoft.PowerShell.Security
 Get-ChildItem -Path Cert:\* -Recurse -CodeSigningCert
@@ -109,6 +116,7 @@ This parameter gets only certificates that have code-signing authority.
 For more information about the Certificate provider and the Cert: drive, go to [Certificate Provider](../microsoft.powershell.security/providers/certificate-provider.md) or use the `Update-Help` cmdlet to download the help files for the Microsoft.PowerShell.Security module and then type `Get-Help Certificate`.
 
 ### Example 7: Get all items in the specified directory and its subdirectories that have an inclusion and exclusion
+
 ```powershell
 Get-ChildItem -Path C:\Windows -Include *mouse* -Exclude *.png
 ```
@@ -116,6 +124,7 @@ Get-ChildItem -Path C:\Windows -Include *mouse* -Exclude *.png
 This command gets all of the items in the C:\Windows directory and its subdirectories that have "mouse" in the file name, except for those with a .png file name extension.
 
 ### Example 8: Get all items in the specified directory and its subdirectories limited by the Depth parameter
+
 ```
 PS C:\> Get-ChildItem -Path C:\Windows -Depth 2
 ```
@@ -125,23 +134,26 @@ This command gets all of the items in the C:\Windows directory and its subdirect
 ## PARAMETERS
 
 ### -Attributes
+
 Gets files and folders with the specified attributes. This parameter supports all attributes and lets you specify complex combinations of attributes.
 
 For example, to get non-system files (not directories) that are encrypted or compressed, type:
 
-
-Get-ChildItem -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed
+`Get-ChildItem -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed`
 
 To find files and folders with commonly used attributes, you can use the `-Attributes` parameter, or the `-Directory`, `-File`, `-Hidden`, `-ReadOnly`, and `-System` switch parameters.
 
 The `-Attributes` parameter supports the following attributes:
+
 - Archive
 - Compressed
 - Device
 - Directory
 - Encrypted
 - Hidden
+- IntegrityStream
 - Normal
+- NoScrubData
 - NotContentIndexed
 - Offline
 - ReadOnly
@@ -152,7 +164,8 @@ The `-Attributes` parameter supports the following attributes:
 
 For a description of these attributes, see the [FileAttributes Enumeration](http://go.microsoft.com/fwlink/?LinkId=201508).
 
-Use the following operators to combine attributes.
+Use the following operators to combine attributes:
+
 - `!`   (NOT)
 - `+`   (AND)
 - `,`   (OR)
@@ -160,6 +173,7 @@ Use the following operators to combine attributes.
 No spaces are permitted between an operator and its attribute. However, spaces are permitted before commas.
 
 You can use the following abbreviations for commonly used attributes:
+
 - `D`   (Directory)
 - `H`   (Hidden)
 - `R`   (Read-only)
@@ -179,7 +193,8 @@ Accept wildcard characters: False
 ```
 
 ### -Depth
-This parameter, added in Powershell 5.0 enables you to control the depth of recursion. You use both the `-Recurse` and the `-Depth` parameter to limit the recursion.
+
+This parameter, added in PowerShell 5.0 enables you to control the depth of recursion. You use both the `-Recurse` and the `-Depth` parameter to limit the recursion.
 
 ```yaml
 Type: UInt32
@@ -194,6 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -Directory
+
 Gets directories (folders).
 
 To get only directories, use the `-Directory` parameter and omit the `-File` parameter. To exclude directories, use the `-File` parameter and omit the `-Directory` parameter, or use the `-Attributes` parameter.
@@ -213,6 +229,7 @@ Accept wildcard characters: False
 ```
 
 ### -Exclude
+
 Omits the specified items.
 The value of this parameter qualifies the `-Path` parameter.
 Enter a path element or pattern, such as "*.txt".
@@ -231,6 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -File
+
 Gets files.
 
 To get only files, use the `-File` parameter and omit the Directory parameter. To exclude files, use the `-Directory` parameter and omit the `-File` parameter, or use the `-Attributes` parameter.
@@ -250,6 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
+
 Specifies a filter in the provider's format or language.
 The value of this parameter qualifies the `-Path` parameter.
 The syntax of the filter, including the use of wildcards, depends on the provider.
@@ -268,6 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
+
 Allows the cmdlet to get items that cannot otherwise not be accessed by the user, such as hidden or system files.
 Implementation varies among providers.
 
@@ -288,6 +308,7 @@ Accept wildcard characters: False
 ```
 
 ### -Hidden
+
 Gets only hidden files and directories (folders).  By default, `Get-ChildItem` gets only non-hidden items, but you can use the `-Force` parameter to include hidden items in the results.
 
 To get only hidden items, use the `-Hidden` parameter, its "`h`" or "`ah`" aliases, or the Hidden value of the `-Attributes` parameter. To exclude hidden items, omit the `-Hidden` parameter or use the `-Attributes` parameter.
@@ -305,6 +326,7 @@ Accept wildcard characters: False
 ```
 
 ### -Include
+
 Gets only the specified items.
 The value of this parameter qualifies the `-Path` parameter.
 Enter a path element or pattern, such as "*.txt".
@@ -325,6 +347,7 @@ Accept wildcard characters: False
 ```
 
 ### -LiteralPath
+
 Specifies a path to one or more locations.
 Unlike the `-Path` parameter, the value of the `-LiteralPath` parameter is used exactly as it is typed.
 No characters are interpreted as wildcards.
@@ -344,6 +367,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 Gets only the names of the items in the locations.
 If you pipe the output of this command to another command, only the item names are sent.
 
@@ -360,6 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 Specifies a path to one or more locations.
 Wildcards are permitted.
 The default location is the current directory (`.`).
@@ -377,6 +402,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReadOnly
+
 Gets only read-only files and directories (folders).
 
 To get only read-only items, use the `-ReadOnly` parameter, its "`ar`" alias, or the ReadOnly value of the `-Attributes` parameter. To exclude read-only items, use the `-Attributes` parameter.
@@ -394,9 +420,8 @@ Accept wildcard characters: False
 ```
 
 ### -Recurse
-Gets the items in the specified locations and in all child items of the locations.
 
-In Windows PowerShell 2.0 and earlier versions of Windows PowerShell, the `-Recurse` parameter works only when the value of the `-Path` parameter is a container that has child items, such as C:\Windows or C:\Windows\*, and not when it is an item does not have child items, such as C:\Windows\*.exe.
+Gets the items in the specified locations and in all child items of the locations.
 
 ```yaml
 Type: SwitchParameter
@@ -411,6 +436,7 @@ Accept wildcard characters: False
 ```
 
 ### -System
+
 Gets only system files and directories (folders).
 
 To get only system files and folders, use the `-System` parameter, its "`as`" alias, or the System value of the `-Attributes` parameter. To exclude system files and folders, use the `-Attributes` parameter.
@@ -428,6 +454,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseTransaction
+
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
 For more information, see about_Transactions.
@@ -450,17 +477,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
+
 You can pipe a string that contains a path to `Get-ChildItem`.
 
 ## OUTPUTS
 
 ### System.Object
+
 The type of object that `Get-ChildItem` returns is determined by the objects in the provider drive path.
 
 ### System.String
+
 If you use the `-Name` parameter, `Get-ChildItem` returns the object names as strings.
 
-## NOTES
+## Notes
+
 You can also refer to `Get-ChildItem` by its built-in aliases, "`ls`", "`dir`", and "`gci`". For more information, see about_Aliases.
 
 `Get-ChildItem` does not get hidden items by default.

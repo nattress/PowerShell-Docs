@@ -493,21 +493,21 @@ To get the results of commands and scripts that run in disconnected sessions, us
 
 ### Example 17: Run a command on a remote computer using SSH
 ```
-PS C:\> Invoke-Command -HostName LinuxServer01 -UserName UserA -ScriptBlock { Get-MailBox * }
+PS C:\> Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * }
 ```
 
 This example shows how to run a command on a remote computer using Secure Shell (SSH). If SSH is configured on the remote computer to prompt for passwords then you will get a password prompt. Otherwise you will have to use SSH key based user authentication.
 
 ### Example 18: Run a command on a remote computer using SSH and specify a user authentication key
 ```
-PS C:\> Invoke-Command -HostName LinuxServer01 -UserName UserA -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
+PS C:\> Invoke-Command -HostName UserA@LinuxServer01 -ScriptBlock { Get-MailBox * } -KeyFilePath c:\<path>\userAKey_rsa
 ```
 
 This example shows how to run a command on a remote computer using SSH and specifying a key file for user authentication. You will not get a password prompt unless the key authentication fails and the remote computer is configured to allow basic password authentication.
 
 ### Example 19: Run a script file on multiple remote computers using SSH as a job
 ```
-PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="LinuxServer5"; UserName="UserB"; KeyFilePath="c:\UserB\<path>\id_rsa }
+PS C:\> $sshConnections = @{ HostName="WinServer1"; UserName="domain\userA"; KeyFilePath="c:\users\UserA\id_rsa" }, @{ HostName="UserB@LinuxServer5"; KeyFilePath="c:\UserB\<path>\id_rsa }
 PS C:\> $results = Invoke-Command -FilePath c:\Scripts\CollectEvents.ps1 -SSHConnection $sshConnections
 ```
 
@@ -704,6 +704,9 @@ Specifies the session configuration that is used for the new **PSSession**.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration.
 If you specify only the configuration name, the following schema URI is prepended: http://schemas.microsoft.com/PowerShell.
+
+When used with SSH, this specifies the subsystem to use on the target as defined in sshd_config.
+The default value for SSH is the `powershell` subsystem.
 
 The session configuration for a session is located on the remote computer.
 If the specified session configuration does not exist on the remote computer, the command fails.
