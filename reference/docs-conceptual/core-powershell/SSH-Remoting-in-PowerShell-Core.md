@@ -1,4 +1,10 @@
 
+---
+title: PowerShell Remoting Over SSH
+description: Remoting in PowerShell Core using SSH
+ms.date: 08/06/2018
+---
+
 # PowerShell Remoting Over SSH
 
 ## Overview
@@ -183,15 +189,6 @@ and optionally key based authentication.
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
-
-## Authentication
-
-PowerShell remoting over SSH relies on the authentication exchange between the SSH client and SSH service and does not implement any authentication schemes itself.
-This means that any configured authentication schemes including multi-factor authentication is handled by SSH and independent of PowerShell.
-For example, you can configure the SSH service to require public key authentication as well as a one-time password for added security.
-Configuration of multi-factor authentication is outside the scope of this documentation.
-Refer to documentation for SSH on how to correctly configure multi-factor authentication and validate it works outside of PowerShell
-before attempting to use it with PowerShell remoting.
 
 ## PowerShell Remoting Example
 

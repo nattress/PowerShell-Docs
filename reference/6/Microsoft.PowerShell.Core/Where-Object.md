@@ -22,11 +22,6 @@ Selects objects from a collection based on their property values.
 Where-Object [-InputObject <PSObject>] [-Property] <String> [[-Value] <Object>] [-EQ] [<CommonParameters>]
 ```
 
-### NotSet
-```
-Where-Object [-Property] <string> -Not [-InputObject <psobject>] [<CommonParameters>]
-```
-
 ### ScriptBlockSet
 ```
 Where-Object [-InputObject <PSObject>] [-FilterScript] <ScriptBlock> [<CommonParameters>]
@@ -288,7 +283,8 @@ Get-Command | where {$_.OutputType}
 ```powershell
 # Use Where-Object to get objects that are containers.
 # This gets objects that have the **PSIsContainer** property with a value of $True and excludes all others.
-Get-ChildItem | where PS>  Get-ChildItem | where {$_.PS>  Get-ChildItem | where {!$_.PS>  Get-ChildItem | where PSIsContainer -eq $False
+Get-ChildItem | where PSIsContainer
+Get-ChildItem | where {$_.PSIsContainer}
 ```
 
 ```powershell
@@ -892,25 +888,6 @@ This parameter was introduced in Windows PowerShell 3.0.
 Type: SwitchParameter
 Parameter Sets: NotEqualSet
 Aliases: INE
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Not
-Indicates that this cmdlet gets objects if the property does not exist or has a value of null or false.
-
-For example: `Get-Service | where -Not "DependentServices"`
-
-This parameter was introduced in Windows PowerShell 6.1.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Not
-Aliases: 
 
 Required: True
 Position: Named

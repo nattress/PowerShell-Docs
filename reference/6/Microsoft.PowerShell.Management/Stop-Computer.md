@@ -27,7 +27,7 @@ It can also shut down the local computer.
 
 You can use the parameters of **Stop-Computer** to run the shutdown operations as a background job, to specify the authentication levels and alternate credentials, to limit the concurrent connections that are created to run the command, and to force an immediate shut down.
 
-This cmdlet does not require Windows PowerShell remoting unless you use the *AsJob* parameter.
+This cmdlet does not require PowerShell remoting unless you use the *AsJob* parameter.
 
 ## EXAMPLES
 
@@ -98,7 +98,7 @@ The default is the local computer.
 Type the NETBIOS name, IP address, or fully qualified domain name of one or more computers in a comma-separated list.
 To specify the local computer, type the computer name or localhost.
 
-This parameter does not rely on Windows PowerShell remoting.
+This parameter does not rely on PowerShell remoting.
 You can use the *ComputerName* parameter even if your computer is not configured to run remote commands.
 
 ```yaml

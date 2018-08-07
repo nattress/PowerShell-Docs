@@ -1,3 +1,9 @@
+---
+title: Installing PowerShell Core on Linux
+description: Information about installing PowerShell Core on various Linux distributions
+ms.date: 08/06/2018
+---
+
 # Installing PowerShell Core on Linux
 
 Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.10][u18], [Debian 8][deb8], [Debian 9][deb9],
@@ -50,11 +56,11 @@ PowerShell Core, for Linux, is published to package repositories for easy instal
 This is the preferred method.
 
 ```sh
-# Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
-# Register the Microsoft repository GPG keys
-sudo dpkg -i packages-microsoft-prod.deb
+# Register the Microsoft Ubuntu repository
+curl https://packages.microsoft.com/config/ubuntu/14.04/prod.list | sudo tee /etc/apt/sources.list.d/microsoft.list
 
 # Update the list of products
 sudo apt-get update
@@ -101,11 +107,11 @@ PowerShell Core, for Linux, is published to package repositories for easy instal
 This is the preferred method.
 
 ```sh
-# Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
-# Register the Microsoft repository GPG keys
-sudo dpkg -i packages-microsoft-prod.deb
+# Register the Microsoft Ubuntu repository
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/16.04/prod.list
 
 # Update the list of products
 sudo apt-get update
@@ -155,11 +161,11 @@ PowerShell Core, for Linux, is published to package repositories for easy instal
 This is the preferred method.
 
 ```sh
-# Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
-# Register the Microsoft repository GPG keys
-sudo dpkg -i packages-microsoft-prod.deb
+# Register the Microsoft Ubuntu repository
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/18.04/prod.list
 
 # Update the list of products
 sudo apt-get update
