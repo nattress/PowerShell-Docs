@@ -179,30 +179,7 @@ Parameter Sets: ByPath
 Aliases:
 
 Required: False
-<<<<<<< HEAD
 Position: 0
-=======
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LiteralPath
-Specifies a location to the transcript file.
-Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is typed.
-No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks inform PowerShell not to interpret any characters as escape sequences.
-
-```yaml
-Type: String
-Parameter Sets: ByLiteralPath
-Aliases: PSPath
-
-Required: False
-Position: 1
->>>>>>> 009867092cad95dca42870ac8212a7a82d522973
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
