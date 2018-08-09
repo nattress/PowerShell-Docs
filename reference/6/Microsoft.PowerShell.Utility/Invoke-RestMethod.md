@@ -137,11 +137,7 @@ Invoke-RestMethod $url -FollowRelLink -MaximumFollowRelLink 2
 
 Some REST APIs support pagination via Relation Links per [RFC5988](https://tools.ietf.org/html/rfc5988#page-6). Instead of parsing the header to get the URL for the next page, you can have the cmdlet do this for you. This example returns the first two pages of issues from the PowerShell GitHub repository
 
-<<<<<<< HEAD
 ## PARAMETERS
-=======
-## Parameters
->>>>>>> 17d1082a86cba1439688cedfdb3f73bd1924228e
 
 ### -AllowUnencryptedAuthentication
 Allows sending of credentials and secrets over unencrypted connections. By default, supplying **-Credential** or any **-Authentication** option with a **-Uri** that does not begin with `https://` will result in an error and the request will abort to prevent unintentionally communicating secrets in plain text over unencrypted connections. To override this behavior at your own risk, supply the **-AllowUnencryptedAuthentication** parameter.
