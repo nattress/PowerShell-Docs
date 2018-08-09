@@ -12,7 +12,7 @@ title: Start-Transcript
 # Start-Transcript
 
 ## SYNOPSIS
-Creates a record of all or part of a Windows PowerShell session to a text file.
+Creates a record of all or part of a PowerShell session to a text file.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber] [
 ```
 
 ## DESCRIPTION
-The `Start-Transcript` cmdlet creates a record of all or part of a Windows PowerShell session to a text file.
+The `Start-Transcript` cmdlet creates a record of all or part of a PowerShell session to a text file.
 The transcript includes all command that the user types and all output that appears on the console.
 
 Starting in Windows PowerShell 5.0, `Start-Transcript` includes the host name in the generated file name of all transcripts.
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 
 ### -OutputDirectory
 Specifies a specific path and folder in which to save a transcript.
-Windows PowerShell automatically assigns the transcript name.
+PowerShell automatically assigns the transcript name.
 
 ```yaml
 Type: String
@@ -179,7 +179,30 @@ Parameter Sets: ByPath
 Aliases:
 
 Required: False
+<<<<<<< HEAD
 Position: 0
+=======
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LiteralPath
+Specifies a location to the transcript file.
+Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is typed.
+No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks.
+Single quotation marks inform PowerShell not to interpret any characters as escape sequences.
+
+```yaml
+Type: String
+Parameter Sets: ByLiteralPath
+Aliases: PSPath
+
+Required: False
+Position: 1
+>>>>>>> 009867092cad95dca42870ac8212a7a82d522973
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
