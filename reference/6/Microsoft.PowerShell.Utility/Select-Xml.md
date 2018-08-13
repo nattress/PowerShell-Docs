@@ -120,7 +120,7 @@ Checkpoint-Computer     C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microso
 ...
 ```
 
-This example shows how to use the **Select-Xml** cmdlet to search the Windows PowerShell XML-based cmdlet help files.
+This example shows how to use the **Select-Xml** cmdlet to search the PowerShell XML-based cmdlet help files.
 In this example, we'll search for the cmdlet name that serves as a title for each help file and the path to the help file.
 
 The first command creates a hash table that represents the XML namespace that is used for the help files and saves it in the $Namespace variable.

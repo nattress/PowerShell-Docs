@@ -29,13 +29,13 @@ Export-FormatData -InputObject <ExtendedTypeDefinition[]> -LiteralPath <String> 
 ```
 
 ## DESCRIPTION
-The **Export-FormatData** cmdlet creates Windows PowerShell formatting files (format.ps1xml) from the formatting objects in the current session.
+The **Export-FormatData** cmdlet creates PowerShell formatting files (format.ps1xml) from the formatting objects in the current session.
 It takes the **ExtendedTypeDefinition** objects that Get-FormatData returns and saves them in a file in XML format.
 
-Windows PowerShell uses the data in formatting files (format.ps1xml) to generate the default display of Microsoft .NET Framework objects in the session.
+PowerShell uses the data in formatting files (format.ps1xml) to generate the default display of Microsoft .NET Framework objects in the session.
 You can view and edit the formatting files and use the Update-FormatData cmdlet to add the formatting data to a session.
 
-For more information about formatting files in Windows PowerShell, see about_Format.ps1xml.
+For more information about formatting files in PowerShell, see about_Format.ps1xml.
 
 ## EXAMPLES
 

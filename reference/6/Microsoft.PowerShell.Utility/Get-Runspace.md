@@ -12,7 +12,7 @@ title: Get-Runspace
 # Get-Runspace
 
 ## SYNOPSIS
-Gets active runspaces within a Windows PowerShellhost process.
+Gets active runspaces within a PowerShellhost process.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-Runspace [-InstanceId] <Guid[]> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-Runspace** cmdlet gets active runspaces in a Windows PowerShell host process.
+The **Get-Runspace** cmdlet gets active runspaces in a PowerShell host process.
 
 ## EXAMPLES
 

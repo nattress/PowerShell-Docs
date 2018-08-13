@@ -12,7 +12,7 @@ title: Add-Member
 # Add-Member
 
 ## SYNOPSIS
-Adds custom properties and methods to an instance of a Windows PowerShell object.
+Adds custom properties and methods to an instance of a PowerShell object.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String
 ```
 
 ## DESCRIPTION
-The **Add-Member** cmdlet lets you add members (properties and methods) to an instance of a Windows PowerShell object.
+The **Add-Member** cmdlet lets you add members (properties and methods) to an instance of a PowerShell object.
 For instance, you can add a NoteProperty member that contains a description of the object or a ScriptMethod member that runs a script to change the object.
 
 To use **Add-Member**, pipe the object to **Add-Member**, or use the **InputObject** parameter to specify the object.
@@ -281,7 +281,7 @@ The acceptable values for this parameter are:
 For information about these values, see [PSMemberTypes Enumeration](https://msdn.microsoft.com/library/system.management.automation.psmembertypes) in the MSDN library.
 
 Not all objects have every type of member.
-If you specify a member type that the object does not have, Windows PowerShell returns an error.
+If you specify a member type that the object does not have, PowerShell returns an error.
 
 ```yaml
 Type: PSMemberTypes
@@ -315,7 +315,7 @@ Accept wildcard characters: False
 Specifies a hash table or ordered dictionary of note property names and values.
 Type a hash table or dictionary in which the keys are note property names and the values are note property values.
 
-For more information about hash tables and ordered dictionaries in Windows PowerShell, see about_Hash_Tables.
+For more information about hash tables and ordered dictionaries in PowerShell, see about_Hash_Tables.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
